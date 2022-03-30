@@ -1,0 +1,27 @@
+.article-label .paragraph i.event {
+    font-weight: bold;
+    color: #ff7800;
+    cursor: pointer;
+}
+.article-label .paragraph i.event abbr {
+    margin: 5px;
+    padding: 0 5px;
+    font-weight: 400;
+    font-size: .6em;
+    line-height: 1;
+    border: 1px dashed currentColor;
+    user-select: none;
+    cursor: pointer;
+}
+.article-label .paragraph i.event.role {
+    color: #008eff;
+}
+.article-label .paragraph i.event abbr~abbr{
+    margin-left: 0;
+}
+.article-label .paragraph i.event.labelling {
+    color: #008eff;
+}
+.article-label .paragraph i.event.labelled {
+    color: #35c06e;
+}

@@ -1,0 +1,24 @@
+
+.labeller.article-label{
+    --bg-color: #eef4fd;
+    margin: 10px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 2;
+    color: #333;
+    background-image: repeating-linear-gradient(to bottom,  var(--bg-color) 0em, var(--bg-color) 2em, transparent 2em, transparent 4em);
+    background-clip: padding-box;
+    border-left: 1px solid var(--bg-color);
+    border-right: 1px solid var(--bg-color);
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid var(--bg-color);
+}
+.article-label .paragraph {
+    margin: 0;
+    text-align: left;
+    text-indent: 2em;
+}
+.article-label .paragraph i {
+    user-select: text;
+    font-style: normal;
+}
