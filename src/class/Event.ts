@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+import { EventStates, Actions, LabelElement } from './label.types' 
 // class LabelElement {
 //     private endPara: number
 //     private endSent: number
@@ -18,54 +20,91 @@
 //         this.text = text
 //     }
 // }
-type LabelElement = {
-    endPara: number
-    endSent: number
-    endIndex: number
-    startPara: number
-    startSent: number
-    startIndex: number
-    text: string
-    role: string
-}
+
 class Event {
-    private id?:string 
-    private eventTypeId: number
-    private eventType: string
-    private trigger: LabelElement
-    private triggerAbbr!: HTMLElement
-    private elements: LabelElement[]
-    private isLabelled: boolean = false
-    constructor({ id, trigger, eventType, eventTypeId, elements }:Event){
-        this.id = id
-        this.eventTypeId = eventTypeId
-        this.eventType = eventType
+    private _id:string 
+    private _eventTypeId: number
+    private _eventType: string
+    private _trigger: LabelElement|undefined
+    private _elements: LabelElement[]
+    private _state!: number|string
+    constructor(options:Event|undefined){
+        this._id = options?.id || uuidv4()
+        this._eventTypeId = options?.eventTypeId || 0
+        this._eventType = options?.eventType || '0'
+        this._elements = options?.elements || []
+
+        this._trigger = options?.trigger
+        // this._state = boolean ? EventStates.EXISTED : EventStates.LABELLING
         // this.trigger = new LabelElement(trigger)
         // this.elements = elements.map(e => new LabelElement(e))
-        this.trigger = trigger
-        this.elements = elements
-        this.isLabelled = !!elements
     }
 
-    public getId(){
-        return this.id
+    public get id(){
+        return this._id
     }
 
-    public setTriggerAbbr(abbr: HTMLElement){
-        this.triggerAbbr = abbr
+    public set state(state){
+        this._state = state
+    }
+    public get state(){
+        return this._state
     }
 
-    public getTriggerAbbr(){
-        return this.triggerAbbr
+    public set trigger(trigger){
+        this._trigger = trigger
+    }
+    public get trigger(){
+        return this._trigger
     }
 
-    public getTrigger(){
-        return this.trigger
+    public addElement(element: LabelElement){
+        this._elements.push(element)
+    }
+    
+    public set elements(elements){
+        this._elements = elements
+    }
+    public get elements(){
+        return this._elements
     }
 
-    public getElements(){
-        return this.elements
+    public set eventType(eventType){
+        this._eventType = eventType
     }
+    public get eventType(){
+        return this._eventType
+    }
+
+    public set eventTypeId(eventTypeId){
+        this._eventTypeId = eventTypeId
+    }
+    public get eventTypeId(){
+        return this._eventTypeId
+    }
+
+    public toJson(){
+        return {
+            id: this._id,
+            arguments: this._elements,
+            trigger: this._trigger,
+            type: this.state
+        }
+    }
+
+    public getTriggerSelector(){
+        return this.getElementSelector(this._trigger)
+    }
+
+    private getElementSelector(ele: LabelElement): string[]{
+        const { startIndex, endIndex, startSent } = ele,
+            arr = [];
+        for(let index = startIndex; index < endIndex; index++){ 
+            arr.push(`i[data-index='${index}'][data-sent='${startSent}']`)
+        }
+        return arr
+    }
+
 }
 
 export default Event

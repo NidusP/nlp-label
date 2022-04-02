@@ -1,12 +1,18 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/uuid': ^8.3.4
   mockjs: ^1.1.0
   typescript: ^4.5.4
+  uuid: ^8.3.2
   vite: ^2.8.0
   vite-plugin-mock: ^2.9.6
 
+dependencies:
+  uuid: 8.3.2
+
 devDependencies:
+  '@types/uuid': 8.3.4
   mockjs: 1.1.0
   typescript: 4.6.3
   vite: 2.8.6
@@ -76,6 +82,10 @@ packages:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
       '@types/node': 17.0.23
+    dev: true
+
+  /@types/uuid/8.3.4:
+    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
     dev: true
 
   /ansi-styles/4.3.0:
@@ -675,6 +685,11 @@ packages:
     resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
     engines: {node: '>= 0.4.0'}
     dev: true
+
+  /uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+    dev: false
 
   /vite-plugin-mock/2.9.6_mockjs@1.1.0+vite@2.8.6:
     resolution: {integrity: sha512-/Rm59oPppe/ncbkSrUuAxIQihlI2YcBmnbR4ST1RA2VzM1C0tEQc1KlbQvnUGhXECAGTaQN2JyasiwXP6EtKgg==}

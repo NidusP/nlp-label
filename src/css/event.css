@@ -13,7 +13,12 @@
     user-select: none;
     cursor: pointer;
 }
-.article-label .paragraph i.event.role {
+
+.article-label .paragraph i.event.role.edit {
+    color: #C40045;
+}
+
+.article-label .paragraph i.event.role, .article-label .paragraph i.event abbr.check {
     color: #008eff;
 }
 .article-label .paragraph i.event abbr~abbr{

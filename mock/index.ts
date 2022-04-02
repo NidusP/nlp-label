@@ -58,7 +58,7 @@ export default [
                     ],
                     eventList: [
                         {
-                            "id": "5d6e6a315d01460c8404b600b6301192",
+                            "id": "5d6e6a315d01460c8404b200b6301192",
                             "eventType": "产品行为-上映",
                             "eventTypeId": 9,
                             "show": null,
@@ -105,7 +105,7 @@ export default [
                                 }
                             ]
                         },{
-                            "id": "a03da77c42d44c06a3f56e1ff03d6abb",
+                            "id": "a03da77c42d43c06a3f56e1ff03d6abb",
                             "eventType": "组织关系-裁员",
                             "eventTypeId": 10,
                             "show": null,
@@ -142,7 +142,7 @@ export default [
                                 }
                             ]
                         },{
-                            "id": "a03da77c42d44c06a3f56e1ff03d6abb",
+                            "id": "a03da27c42d44c06a3f56e1ff03d6abb",
                             "eventType": "组织关系-裁员",
                             "eventTypeId": 10,
                             "show": null,
@@ -168,18 +168,18 @@ export default [
                                     "endPosi": 63
                                 },
                                 {
-                                    "text": "A-10雷电Ⅱ",
+                                    "text": "雷电",
                                     "role": "主体",
                                     "startPara": 1,
                                     "startSent": 1,
-                                    "startPosi": 0,
+                                    "startPosi": 4,
                                     "endPara": 1,
                                     "endSent": 1,
-                                    "endPosi": 7
+                                    "endPosi": 6
                                 }
                             ]
                         },{
-                            "id": "a03da77c42d44c06a3f56e1ff03d6abb",
+                            "id": "a03da57c42d44c06a3f56e1ff03d6abb",
                             "eventType": "组织关系-裁员",
                             "eventTypeId": 10,
                             "show": null,

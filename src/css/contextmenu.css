@@ -1,0 +1,77 @@
+.label-context-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, .35);
+    z-index: 999;
+    animation: fade-in .3s forwards;
+}
+
+.label-context-menu .focus-container {
+    position: absolute;
+    padding: 4px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.label-context-menu .focus-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ededed;
+    box-shadow: inset 0 0 10px 0 #e4e4e4;
+    border: 1px #dddddd dashed;
+    z-index: -1;
+}
+
+/* .focus-list {
+    max-height: 25vh;
+    .scroll-mixins(6px);
+    // @include scroll-mixins();
+    overflow-y: scroll;
+} */
+.label-context-menu .focus-container {
+    /* max-height: 25vh; */
+    /* overflow-y: scroll; */
+}
+.label-context-menu .focus-container .focus-list {
+    margin: 0;
+    position: relative;
+    padding: 2px 3px;
+    color: #000;
+    line-height: 1.6;
+    text-align: center;
+    z-index: 0;
+}
+
+.label-context-menu .focus-container .focus-item {
+    list-style: none;
+    white-space: nowrap;
+}
+.label-context-menu .focus-container .focus-item.disabled {
+    color: #b6b6b6;
+    user-select: none;
+    cursor: no-drop;
+    background-color: rgba(255, 0, 0, 0);
+}
+.label-context-menu .focus-container .focus-item:hover {
+    color: #fff;
+    background-color: red;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

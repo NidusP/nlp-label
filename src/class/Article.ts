@@ -1,25 +1,25 @@
 import Sentence from './Sentence'
 
 class Paragraph {
-    private paraId: number
-    private sentences: Sentence[] = []
+    private _paraId: number
+    private _sentences: Sentence[] = []
     constructor(paraId: number){
-        this.paraId = paraId
+        this._paraId = paraId
     }
 
     public addSent(sent:Sentence){
-        this.sentences.push(sent)
+        this._sentences.push(sent)
     }
-    public getSentences(){
-        return this.sentences
+    public get sentences(){
+        return this._sentences
     }
-    public getId(){
-        return this.paraId
+    public get id(){
+        return this._paraId
     }
 }
 
 class Article {
-    private paragraphs: Paragraph[] = []
+    private _paragraphs: Paragraph[] = []
     constructor(sentences: [] = []){
         this.setContent(sentences)
     }
@@ -29,12 +29,12 @@ class Article {
         return para
     }
 
-    public getParagraphs(){
-        return this.paragraphs
+    public get paragraphs(){
+        return this._paragraphs
     }
 
     private getPara(id: number){
-        return this.paragraphs.find(paragraph => paragraph.getId() === id) 
+        return this._paragraphs.find(paragraph => paragraph.id === id) 
     }
 
     private setContent(sentences: {paraId:number, sentId: number, content:string}[]){
